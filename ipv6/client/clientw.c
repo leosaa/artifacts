@@ -66,7 +66,6 @@ int main(int argc, char *argv[]){
 
     sin6.sin6_family = AF_INET6;
     sin6.sin6_port = htons(port);
-    //sin6.sin_addr.s_addr = inet_addr(ip);
     inet_pton(AF_INET6, ip, &sin6.sin6_addr);
 
     if ((connect(fd, (struct sockaddr *)&sin6, sizeof(sin6))) == -1) {
@@ -76,8 +75,6 @@ int main(int argc, char *argv[]){
 
     while( (b = fread(sendbuffer, 1, sizeof(sendbuffer), fp))>0 ){
         write(fd, sendbuffer, sizeof(sendbuffer));
-        //send(fd, sendbuffer, b, 0);
-        //send(fd, sendbuffer, b, MSG_ZEROCOPY);
         tot +=b;
     }
     fprintf(stdout, "[+]Total bytes send %d\n", tot);
