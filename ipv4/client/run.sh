@@ -4,6 +4,7 @@
 FILES="file-1K.img file-1M.img file-10M.img file-100M.img file-1G.img file-10G.img"
 IP=<ip>
 
+function runbench {
 for i in $FILES
 do echo "$i"
 	#TEST="./clientw $IP 8080 $i"
@@ -14,3 +15,5 @@ do echo "$i"
     sync
 	echo ""
 done
+}
+runbench
