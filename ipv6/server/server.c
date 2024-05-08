@@ -42,9 +42,6 @@ int main(int argc, char *argv[]){
     memset(buff, '0', sizeof(buff));
 
     sin6.sin6_family = AF_INET6;
-    //sin6.sin_addr.s_addr = htonl(INADDR_ANY);
-    //sin6.sin_addr.s_addr = inet_addr(ip);
-    //sin6.sin6_addr = inet_addr(ip);
     sin6.sin6_addr = in6addr_any;
     sin6.sin6_port = htons(PORT);
 
