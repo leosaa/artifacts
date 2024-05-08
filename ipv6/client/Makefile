@@ -13,4 +13,4 @@ client-sf:
 	@echo "Compiling client-sf.c"
 	$(CC) $(CFLAGS) -o client-sf client-sf.c
 clean:
-	rm -f server client client-sf file-*
+	rm -f server clientw client-sf file-*
